@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">TMS_An_15_Homework_Lesson_22</string>
+    <string name="spiice">Spiice</string>
+    <string name="discover_the_platform">Discover the platform</string>
+    <string name="you_have_an_account_log_in">You have an account ? <font color="#120E21">Log-in</font></string>
+    <string name="find_projects_from_companies">Find projects from companies \n everywhere in the word</string>
+    <string name="make_money_while_working_n_on_awesome_projects">Make money while working \n on awesome projects</string>
+    <string name="chat_with_others_freelancers_n_and_develop_your_network">Chat with others freelancers \n and develop your network</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_up">Sign up</string>
+    <string name="sign_in">Sign in</string>
+    <string name="skip" translatable="false">Skip</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="log_out">log out</string>
+    <string name="add_note">add note</string>
+    <string name="list_item">list item</string>
+    <string name="fill_list_item">fill list item</string>
+    <string name="add_title">add title</string>
+    <string name="header_text">Header text</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="time_text">time text</string>
+    <string name="submit">Submit</string>
+    <string name="title_text">Title text</string>
+    <string name="check_boxes_to_add_default_values">check boxes to make add default values</string>
+    <string name="make_note_important">check box to make note important</string>
+    <string name="share">share</string>
+</resources>
