@@ -8,29 +8,28 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import by.bashlikovvv.tms_an_15_homework_lesson_22.R
 import by.bashlikovvv.tms_an_15_homework_lesson_22.databinding.ActivityMainBinding
 import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.model.Destination
 import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.model.ItemCommon
 import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.model.setFragmentNavigationListener
-import by.bashlikovvv.tms_an_15_homework_lesson_22.features.App
 import by.bashlikovvv.tms_an_15_homework_lesson_22.features.notes.view.ARG_PARAM_HEADER
 import by.bashlikovvv.tms_an_15_homework_lesson_22.features.notes.view.ARG_PARAM_TEXT
 import by.bashlikovvv.tms_an_15_homework_lesson_22.features.notes.view.ARG_PARAM_TIME
 import by.bashlikovvv.tms_an_15_homework_lesson_22.features.onboarding.view.OnboardingActivity
 import by.bashlikovvv.tms_an_15_homework_lesson_22.features.viewmodel.ApplicationViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private val viewModel: ApplicationViewModel by viewModels {
-        val app = applicationContext as App
-        ApplicationViewModel.Factory(app.registrationRepository)
-    }
+    private val viewModel: ApplicationViewModel by viewModels()
 
     private val navController: NavController by lazy(LazyThreadSafetyMode.NONE) {
         val navHostFragment = supportFragmentManager
@@ -45,6 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         onboardingActivityLauncher()
         registrationLauncher()
+        NavigationUI.setupWithNavController(binding.bottomNavView, navController)
 
         supportFragmentManager.setFragmentNavigationListener(this) {
             fragmentNavigationListener(it)

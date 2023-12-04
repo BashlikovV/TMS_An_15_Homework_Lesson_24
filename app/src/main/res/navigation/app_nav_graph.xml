@@ -23,4 +23,9 @@
         android:id="@+id/inputFragment"
         android:name="by.bashlikovvv.tms_an_15_homework_lesson_22.features.notes.view.InputFragment"
         android:label="InputFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="by.bashlikovvv.tms_an_15_homework_lesson_22.features.profile.view.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

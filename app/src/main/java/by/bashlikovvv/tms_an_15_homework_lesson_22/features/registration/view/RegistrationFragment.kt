@@ -10,7 +10,9 @@ import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import by.bashlikovvv.tms_an_15_homework_lesson_22.R
 import by.bashlikovvv.tms_an_15_homework_lesson_22.databinding.FragmentRegistrationBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RegistrationFragment : Fragment() {
 
     override fun onCreateView(

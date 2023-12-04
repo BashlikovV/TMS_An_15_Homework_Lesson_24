@@ -6,6 +6,7 @@ import by.bashlikovvv.tms_an_15_homework_lesson_22.data.registration.data.mapper
 import by.bashlikovvv.tms_an_15_homework_lesson_22.data.registration.data.mapper.UserEntityMapper
 import by.bashlikovvv.tms_an_15_homework_lesson_22.data.registration.data.util.SecurityUtilsImpl
 import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.RegistrationFailedException
+import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.model.CurrentUserInfo
 import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.model.User
 import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.repository.IRegistrationRepository
 
@@ -73,5 +74,17 @@ class RegistrationRepository(
         )
         rememberMe = true
         currentUserDao.updateCurrentUser(currentUser)
+    }
+
+    override suspend fun getCurrentUserInfo(): CurrentUserInfo {
+        val currentUser = currentUserDao.getCurrentUser()
+        val user = usersDao.getUserByEmail(currentUser.email)
+
+        return CurrentUserInfo(
+            email = user?.email ?: "",
+            hash = user?.hash ?: "",
+            salt = user?.salt ?: "",
+            lasConnectionTime = user?.time ?: Long.MAX_VALUE
+        )
     }
 }

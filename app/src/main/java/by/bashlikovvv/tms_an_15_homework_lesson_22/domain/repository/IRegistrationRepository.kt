@@ -1,5 +1,6 @@
 package by.bashlikovvv.tms_an_15_homework_lesson_22.domain.repository
 
+import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.model.CurrentUserInfo
 import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.model.User
 
 interface IRegistrationRepository {
@@ -13,4 +14,6 @@ interface IRegistrationRepository {
     suspend fun isSignedIn(): Boolean
 
     suspend fun logOut()
+
+    suspend fun getCurrentUserInfo(): CurrentUserInfo
 }

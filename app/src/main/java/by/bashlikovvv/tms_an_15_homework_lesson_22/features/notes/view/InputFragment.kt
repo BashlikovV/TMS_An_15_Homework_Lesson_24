@@ -15,12 +15,14 @@ import by.bashlikovvv.tms_an_15_homework_lesson_22.databinding.FragmentInputBind
 import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.model.Destination
 import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.model.ItemCommon
 import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.model.navigateToDestination
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar
 
 const val TAG_NOTES_FRAGMENT = "fragmentNotes"
 const val TAG_DETAILS_FRAGMENT = "fragmentDetails"
 const val TAG_INPUT_FRAGMENT = "fragmentInput"
 
+@AndroidEntryPoint
 class InputFragment : Fragment() {
 
     private lateinit var binding: FragmentInputBinding
@@ -54,7 +56,7 @@ class InputFragment : Fragment() {
     private fun onSubmit() {
         binding.createNote()
         viewModel.state.observe(viewLifecycleOwner) {
-            ApplicationData.addNote(it.note)
+            viewModel.addNote(it.note)
         }
         if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
             navigateToDestination(Destination.Notes)

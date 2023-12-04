@@ -10,12 +10,14 @@ import androidx.fragment.app.viewModels
 import by.bashlikovvv.tms_an_15_homework_lesson_22.R
 import by.bashlikovvv.tms_an_15_homework_lesson_22.databinding.FragmentDetailsBinding
 import by.bashlikovvv.tms_an_15_homework_lesson_22.features.notes.viewmodel.DetailsFragmentViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 const val ARG_PARAM_HEADER = "paramHeader"
 const val ARG_PARAM_TEXT = "paramText"
 const val ARG_PARAM_TIME = "paramTime"
 private const val DEFAULT_VALUE = "error"
 
+@AndroidEntryPoint
 class DetailsFragment : Fragment() {
 
     private val viewModel: DetailsFragmentViewModel by viewModels()

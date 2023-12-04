@@ -25,4 +25,11 @@
     <string name="check_boxes_to_add_default_values">check boxes to make add default values</string>
     <string name="make_note_important">check box to make note important</string>
     <string name="share">share</string>
+    <string name="notes">Notes</string>
+    <string name="profile">Profile</string>
+    <string name="email_">email:</string>
+    <string name="hash">hash:</string>
+    <string name="salt">salt:</string>
+    <string name="time">time:</string>
+    <string name="search">Search</string>
 </resources>

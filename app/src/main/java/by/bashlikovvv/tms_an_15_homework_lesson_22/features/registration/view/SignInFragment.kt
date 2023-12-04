@@ -11,17 +11,15 @@ import androidx.lifecycle.lifecycleScope
 import by.bashlikovvv.tms_an_15_homework_lesson_22.databinding.FragmentSignInBinding
 import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.model.Destination
 import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.model.navigateToDestination
-import by.bashlikovvv.tms_an_15_homework_lesson_22.features.App
 import by.bashlikovvv.tms_an_15_homework_lesson_22.features.registration.viewmodel.SignInFragmentViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class SignInFragment : Fragment() {
 
-    private val viewModel: SignInFragmentViewModel by viewModels {
-        val app = requireActivity().applicationContext as App
-        SignInFragmentViewModel.Factory(app.registrationRepository)
-    }
+    private val viewModel: SignInFragmentViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

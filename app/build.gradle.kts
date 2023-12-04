@@ -1,8 +1,10 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
     id("kotlin-parcelize")
+    id("kotlin-kapt")
 }
 
 android {
@@ -84,4 +86,11 @@ dependencies {
     implementation(LifeCycle.lifeCycleViewModel)
     implementation(LifeCycle.lifecycleExtencions)
     implementation(LifeCycle.lifecycleRuntime)
+    //Hilt
+    implementation("com.google.dagger:hilt-android:2.49")
+    kapt("com.google.dagger:hilt-compiler:2.49")
+}
+
+kapt {
+    correctErrorTypes = true
 }

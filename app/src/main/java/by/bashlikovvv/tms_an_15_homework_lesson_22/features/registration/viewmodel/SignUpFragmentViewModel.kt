@@ -7,12 +7,15 @@ import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.RegistrationFailedExce
 import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.model.User
 import by.bashlikovvv.tms_an_15_homework_lesson_22.domain.repository.IRegistrationRepository
 import by.bashlikovvv.tms_an_15_homework_lesson_22.features.registration.domain.model.SignUpState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SignUpFragmentViewModel(
+@HiltViewModel
+class SignUpFragmentViewModel @Inject constructor(
     private val registrationRepository: IRegistrationRepository
 ) : ViewModel() {
 
